@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>Add New Product</h2>
+  <form (ngSubmit)="addProduct()">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-control" [(ngModel)]="product.description" name="description" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" [(ngModel)]="product.price" name="price" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input type="text" class="form-control" [(ngModel)]="product.category" name="category" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Stock</label>
+      <input type="number" class="form-control" [(ngModel)]="product.stock" name="stock" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Product Image</label>
+      <input type="file" class="form-control" (change)="onImageChange($event)" required>
+    </div>
+    <button type="submit" class="btn btn-success">Add Product</button>
+  </form>
+</div>

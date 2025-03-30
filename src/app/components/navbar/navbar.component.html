@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Eighth navbar example">
   <div class="container mt-4">
-    <a class="navbar-brand" href="#">Container</a>
+    <a class="navbar-brand" [routerLink]="['/']">OHARIA</a>
 
     <!-- Navbar Toggle for Mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -13,16 +13,16 @@
       <!-- Navbar Links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link active" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Store</a>
+          <a class="nav-link" [routerLink]="['/store']">Store</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Categories</a>
+          <a class="nav-link" [routerLink]="['/categories']">Categories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">About</a>
+          <a class="nav-link" [routerLink]="['/about']">About</a>
         </li>
       </ul>
 
@@ -33,16 +33,25 @@
       </form>
 
       <!-- Icons for Cart & Bag -->
-      <div class="d-flex align-items-center">
-        <a href="#" class="text-white me-3">
-          <i class="bi bi-cart-fill fs-4"></i> <!-- Bootstrap Cart Icon -->
+      <div class="d-flex align-items-center me-3">
+        <a [routerLink]="['/cart']" class="text-white me-3">
+          <i class="bi bi-cart-fill fs-4"></i>
         </a>
-        <a href="#" class="text-white">
-          <i class="bi bi-bag-fill fs-4"></i> <!-- Bootstrap Shopping Bag Icon -->
+        <a [routerLink]="['/checkout']" class="text-white">
+          <i class="bi bi-bag-fill fs-4"></i>
         </a>
       </div>
+
+      <!-- Login / Logout Button -->
+     <!-- Login / Logout Button -->
+<ng-container *ngIf="isLoggedIn; else loginTemplate">
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <button class="btn btn-outline-light me-2" (click)="navigateToLogin()">Login</button>
+</ng-template>
+
     </div>
   </div>
 </nav>
-
-
