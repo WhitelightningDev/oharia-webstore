@@ -1,3 +1,20 @@
-<div class="product-list">
-  <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+<div class="category vitality-category">
+  <h1 class="category-title text-light">Vitality</h1>
+  <div class="product-list">
+    <app-product-card *ngFor="let product of vitalityProducts" [product]="product"></app-product-card>
+  </div>
+</div>
+
+<div class="category essence-category">
+  <h2 class="category-title text-light">Essence</h2>
+  <div class="product-list">
+    <app-product-card *ngFor="let product of essenceProducts" [product]="product"></app-product-card>
+  </div>
+</div>
+
+<div class="category canna-category">
+  <h2 class="category-title">Canna</h2>
+  <div class="product-list">
+    <app-product-card *ngFor="let product of cannaProducts" [product]="product"></app-product-card>
+  </div>
 </div>

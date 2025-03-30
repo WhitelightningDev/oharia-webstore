@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },  // Change "Login" → "login"
   { path: "dashboard", component: DashboardComponent },// Change "Dashboard" → "dashboard"
-  {path: "add-product", component: AddProductComponent}
+  {path: "add-product", component: AddProductComponent},
+
 ];
 
