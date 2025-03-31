@@ -8,5 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductCardComponent {
   @Input() product: any; // Receive product data from parent component
+
+  addToCart(product: any) {
+    console.log('Added to cart:', product);
+    // Implement cart logic here
+  }
+
 }
 

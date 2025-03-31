@@ -12,11 +12,15 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
+  // Define categories array to populate the dropdown
+  categories: string[] = ['Vitality', 'Essence', 'Canna'];
+
   product = {
     name: '',
+    shortdescription: '',
     description: '',
     price: 0,
-    category: '',
+    category: '', // Ensure this matches the dropdown value binding
     stock: 0,
   };
 
@@ -36,9 +40,10 @@ export class AddProductComponent {
   addProduct() {
     const formData = new FormData();
     formData.append('name', this.product.name);
+    formData.append('shortdescription', this.product.shortdescription);
     formData.append('description', this.product.description);
     formData.append('price', this.product.price.toString());
-    formData.append('category', this.product.category);
+    formData.append('category', this.product.category); // Send selected category
     formData.append('stock', this.product.stock.toString());
 
     // Append the image if it's selected

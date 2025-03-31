@@ -4,3 +4,12 @@
   justify-content: center;
   gap: 20px;
 }
+
+.catagorytext{
+  padding: 10px;
+  color: #214545;
+}
+
+/* .card-bg{
+  background-color: #f0e8bf;
+} */

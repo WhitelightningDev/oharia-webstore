@@ -34,22 +34,21 @@
 
       <!-- Icons for Cart & Bag -->
       <div class="d-flex align-items-center me-3">
-        <a [routerLink]="['/cart']" class="text-white me-3">
+        <a [routerLink]="['/cart']" class="shoppingitems me-3">
           <i class="bi bi-cart-fill fs-4"></i>
         </a>
-        <a [routerLink]="['/checkout']" class="text-white">
+        <a [routerLink]="['/checkout']" class="shoppingitems">
           <i class="bi bi-bag-fill fs-4"></i>
         </a>
       </div>
 
-      <!-- Login / Logout Button -->
      <!-- Login / Logout Button -->
 <ng-container *ngIf="isLoggedIn; else loginTemplate">
   <button class="btn btn-danger" (click)="logout()">Logout</button>
 </ng-container>
 
 <ng-template #loginTemplate>
-  <button class="btn btn-outline-light me-2" (click)="navigateToLogin()">Login</button>
+  <button class="btn btn-outline-dark me-2" (click)="navigateToLogin()">Login</button>
 </ng-template>
 
     </div>

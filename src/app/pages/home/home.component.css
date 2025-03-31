@@ -2,7 +2,7 @@
   color: #f0e8bf;
 }
 .producttext{
-  color:#f0e8bf
+  color:#214545
 }
 
 
@@ -10,11 +10,6 @@
   background-color: #214545;
 }
 
-
-/* .hero-container {
-  background: url('/fernbg.png') no-repeat center center/cover;
-  height: 600px;
-  width: 95%;
-  border-radius: 10px 10px 10px 10px;
-  margin: 30px;
-} */
+.productbg{
+  background-color: white;
+}
