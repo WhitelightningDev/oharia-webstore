@@ -67,3 +67,11 @@ h4 {
 /* products cards end  */
 
 
+
+
+/* Adjust product card appearance */
+/* Ensures product cards don't take full width */
+app-product-card {
+  max-width: 300px;
+  width: 100%;
+}

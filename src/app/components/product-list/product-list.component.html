@@ -1,20 +1,29 @@
 <div class="category vitality-category">
-  <h1 class="catagorytext category-title ">Vitality</h1>
+  <h1 class="categorytext category-title">Vitality</h1>
   <div class="card-bg m-3 rounded-3 product-list">
-    <app-product-card *ngFor="let product of vitalityProducts" [product]="product"></app-product-card>
+    <div class="product-row">
+      <app-product-card *ngFor="let product of vitalityProducts" [product]="product"></app-product-card>
+    </div>
+    <p *ngIf="vitalityProducts.length === 0" class="no-products-message">No products available in this category.</p>
   </div>
 </div>
 
 <div class="category border-bottom essence-category">
-  <h1 class="catagorytext category-title">Essence</h1>
+  <h1 class="categorytext category-title">Essence</h1>
   <div class="product-list">
-    <app-product-card *ngFor="let product of essenceProducts" [product]="product"></app-product-card>
+    <div class="product-row">
+      <app-product-card *ngFor="let product of essenceProducts" [product]="product"></app-product-card>
+    </div>
+    <p *ngIf="essenceProducts.length === 0" class="no-products-message">No products available in this category.</p>
   </div>
 </div>
 
 <div class="category canna-category">
-  <h1 class="catagorytext category-title">Canna</h1>
+  <h1 class="categorytext category-title">Canna</h1>
   <div class="product-list">
-    <app-product-card *ngFor="let product of cannaProducts" [product]="product"></app-product-card>
+    <div class="product-row">
+      <app-product-card *ngFor="let product of cannaProducts" [product]="product"></app-product-card>
+    </div>
+    <p *ngIf="cannaProducts.length === 0" class="no-products-message">No products available in this category.</p>
   </div>
 </div>

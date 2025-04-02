@@ -13,3 +13,50 @@
 /* .card-bg{
   background-color: #f0e8bf;
 } */
+
+.no-products-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+
+/* Flexbox layout for products in a row */
+.product-row {
+  display: flex;
+  flex-wrap: wrap; /* Ensures products move to the next line if the screen is too small */
+  gap: 20px; /* Adds spacing between products */
+  justify-content: center; /* Centers items */
+  align-items: stretch; /* Makes all cards the same height */
+  padding: 20px;
+}
+
+
+
+/* No products message */
+.no-products-message {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Category styling */
+.category {
+  margin-bottom: 40px;
+}
+
+/* Product background section */
+.productbg {
+  background-color: #f8f9fa;
+  padding: 40px;
+}
+
+/* Category title */
+.category-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
