@@ -24,7 +24,7 @@ export class ProductListComponent implements OnInit {
   essenceProducts: Product[] = [];
   cannaProducts: Product[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   ngOnInit() {
     this.http.get<Product[]>('http://localhost:5000/api/products') // ✅ Explicitly define response as Product[]

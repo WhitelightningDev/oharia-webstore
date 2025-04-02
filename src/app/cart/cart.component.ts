@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CartComponent implements OnInit {
   cartItems: any[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private readonly cartService: CartService) {}
 
   ngOnInit() {
     this.cartItems = this.cartService.getCartItems(); // ✅ Get all cart items
