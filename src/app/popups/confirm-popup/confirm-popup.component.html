@@ -1,0 +1,16 @@
+<div class="popup-overlay">
+  <div class="popup-container">
+    <div class="popup-header">
+      <h4>Confirm Action</h4>
+    </div>
+    <div class="popup-body">
+      <p>{{ message }}</p>
+    </div>
+    <div class="popup-footer">
+      <!-- Button to confirm action -->
+      <button class="btn btn-primary" (click)="confirmAction(true)">Yes</button>
+      <!-- Button to cancel action -->
+      <button class="btn btn-secondary" (click)="confirmAction(false)">No</button>
+    </div>
+  </div>
+</div>

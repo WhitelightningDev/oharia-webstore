@@ -13,3 +13,57 @@
 .productbg{
   background-color: white;
 }
+
+.info-container{
+  background-color: #f0e8bf;
+}
+
+.info-heading{
+  color: #214545;
+}
+
+.info-text{
+  color: #214545;
+}
+
+
+/* products cards start */
+.product-card {
+  min-height: 320px; /* Ensures all cards are the same height */
+  background-size: contain;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slight hover effect for better UI */
+}
+
+h4 {
+  margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    min-height: 250px;
+    margin-bottom: 55px; /* Slightly smaller cards for mobile */
+  }
+  h4{
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    min-height: 300px; /* Smaller cards for extra-small screens */
+  }
+}
+
+/* products cards end  */
+
+

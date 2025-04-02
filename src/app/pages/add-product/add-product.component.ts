@@ -62,4 +62,12 @@ export class AddProductComponent {
       }
     });
   }
+
+   // Close the form and navigate away (or reset form)
+   closeForm() {
+    // You can either navigate away, like back to the dashboard, or clear the form
+    this.router.navigate(['/dashboard']); // For example, navigate to the dashboard
+    // Or reset form like this:
+    // this.product = { name: '', shortdescription: '', description: '', price: 0, category: '', stock: 0 };
+  }
 }

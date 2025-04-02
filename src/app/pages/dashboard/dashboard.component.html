@@ -1,43 +1,170 @@
-<div class="container mt-5">
-  <div class="card shadow-lg">
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-      <h4 class="mb-0">Product Management</h4>
-      <button class="btn btn-light text-primary fw-bold" (click)="addProduct()">
-        <i class="bi bi-plus-lg"></i> Add Product
-      </button>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-hover table-bordered align-middle">
-          <thead class="table-dark">
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Category</th>
-              <th>Stock</th>
-              <th class="text-center">Actions</th>
+<div class="card m-4 shadow-lg">
+  <div class="card-header text-black d-flex justify-content-between align-items-center">
+    <h4 class="tableHeading">Product Management</h4>
+    <button class="addButton btn fw-bold" (click)="addProduct()">
+      <i class="bi bi-plus-lg"></i> Add Product
+    </button>
+  </div>
+  <div class="card-body">
+    <!-- Vitality Table -->
+    <div class="section">
+      <h5 class="section-heading">Vitality Products</h5>
+
+      <!-- Show Spinner When Loading -->
+      <div *ngIf="loadingVitality" class="d-flex justify-content-center my-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Vitality Table When Not Loading -->
+      <div *ngIf="!loadingVitality" class="table-responsive">
+        <table class="productTable table table-hover align-middle">
+          <thead class="column">
+            <tr class="columnheading">
+              <th class="columnheading">Name</th>
+              <th class="columnheading">Description</th>
+              <th class="columnheading">Price</th>
+              <th class="columnheading">Category</th>
+              <th class="columnheading">Stock</th>
+              <th class="columnheading text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let product of vitalityProducts">
               <td>{{ product.name }}</td>
               <td>{{ product.description }}</td>
               <td>${{ product.price }}</td>
               <td>{{ product.category }}</td>
               <td>{{ product.stock }}</td>
               <td class="text-center">
-                <button class="btn btn-primary btn-sm me-2" (click)="editProduct(product)">
+                <button class="editButton btn btn-sm me-2" (click)="editProduct(product)">
                   <i class="bi bi-pencil"></i> Edit
                 </button>
-                <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">
+                <button class="btn btn-danger text-dark btn-sm" (click)="deleteProduct(product._id)">
                   <i class="bi bi-trash"></i> Delete
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
+        <div class="noItemsVitality text-center" *ngIf="vitalityProducts.length === 0">
+          <h5>No items in Vitality</h5>
+          <p>Add an item</p>
+          <button class="mb-3 addButton btn" style="width: 40px; height: 40px" (click)="addProduct()">
+            <i style="width: 30px;" class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Essence Table -->
+    <div class="section">
+      <h5 class="section-heading">Essence Products</h5>
+
+      <!-- Show Spinner When Loading -->
+      <div *ngIf="loadingEssence" class="d-flex justify-content-center my-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Essence Table When Not Loading -->
+      <div *ngIf="!loadingEssence" class="table-responsive">
+        <table class="productTable table table-hover align-middle">
+          <thead class="column">
+            <tr class="columnheading">
+              <th class="columnheading">Name</th>
+              <th class="columnheading">Description</th>
+              <th class="columnheading">Price</th>
+              <th class="columnheading">Category</th>
+              <th class="columnheading">Stock</th>
+              <th class="columnheading text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of essenceProducts">
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.stock }}</td>
+              <td class="text-center">
+                <button class="editButton btn btn-sm me-2" (click)="editProduct(product)">
+                  <i class="bi bi-pencil"></i> Edit
+                </button>
+                <button class="btn btn-danger text-dark btn-sm" (click)="deleteProduct(product._id)">
+                  <i class="bi bi-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="noItemsEssence text-center" *ngIf="essenceProducts.length === 0">
+          <h5>No items in Essence</h5>
+          <p>Add an item</p>
+          <button class="mb-3 addButton btn" style="width: 40px; height: 40px" (click)="addProduct()">
+            <i style="width: 30px;" class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canna Table -->
+    <div class="section">
+      <h5 class="section-heading">Canna Products</h5>
+
+      <!-- Show Spinner When Loading -->
+      <div *ngIf="loadingCanna" class="d-flex justify-content-center my-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Canna Table When Not Loading -->
+      <div *ngIf="!loadingCanna" class="table-responsive">
+        <table class="productTable table table-hover align-middle">
+          <thead class="column">
+            <tr class="columnheading">
+              <th class="columnheading">Name</th>
+              <th class="columnheading">Description</th>
+              <th class="columnheading">Price</th>
+              <th class="columnheading">Category</th>
+              <th class="columnheading">Stock</th>
+              <th class="columnheading text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of cannaProducts">
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.stock }}</td>
+              <td class="text-center">
+                <button class="editButton btn btn-sm me-2" (click)="editProduct(product)">
+                  <i class="bi bi-pencil"></i> Edit
+                </button>
+                <button class="btn btn-danger text-dark btn-sm" (click)="deleteProduct(product._id)">
+                  <i class="bi bi-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="noItemsCanna text-center " *ngIf="cannaProducts.length === 0">
+          <h5>No items in Canna</h5>
+          <p>Add an item</p>
+          <button class="mb-3 addButton btn" style="width: 40px; height: 40px" (click)="addProduct()">
+            <i style="width: 30px;" class="bi bi-plus-lg"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-confirm-popup *ngIf="showPopup" [message]="popupMessage" (confirm)="handlePopupResult($event)">
+</app-confirm-popup>
+
+

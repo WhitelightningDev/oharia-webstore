@@ -1,28 +1,71 @@
-<div class="m-4 rounded-5" style="background-image: url(./fernbg.png)">
-  <div class="hero-container col-lg-12 col-md-12 col-sm-12">
-    <div class="container col-lg-12 col-xxl-8 col-md-12 col-sm-12 px-4 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 
-        <!-- Image Container -->
-        <div class="col-12 col-sm-12 col-lg-6 text-center">
-          <img src="/Asset2.png" class="d-block mx-auto img-fluid" alt="Bootstrap Themes" width="360" height="300" loading="lazy">
+<!--**************** Carousel Start ************************** -->
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center" style="position: relative;">
+    <!-- Previous Button -->
+    <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="bg-dark carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- Carousel Content Centered -->
+    <div class="carousel-inner w-75">
+      <div class="carousel-item active">
+        <div class="d-flex align-items-center">
+          <!-- Card with image on the left -->
+          <div class="card" style="width: 18rem;">
+            <img src="GoldenSeal.jpg" class="card-img-top" alt="Image 1">
+          </div>
+          <!-- Text on the right -->
+          <div class="ms-4 text-center">
+            <h1>Example headline.</h1>
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
         </div>
-
-        <!-- Text Container -->
-        <div class="col-lg-6 text-center text-lg-start">
-          <h1 class="display-5 fw-bold mainText lh-1 mb-3">Nature’s Wisdom, Your Wellness</h1>
-          <p class="mainText lead">
-            Discover the power of nature with our thoughtfully curated selection of natural remedies.
-            Backed by expert knowledge and a deep commitment to wellness, we provide personalized support
-            to help you achieve balance, vitality, and lasting health.
-          </p>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex align-items-center">
+          <!-- Card with image on the left -->
+          <div class="card" style="width: 18rem;">
+            <img src="ParasiteKill.jpg" class="card-img-top" alt="Image 2">
+          </div>
+          <!-- Text on the right -->
+          <div class="ms-4 text-center">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
         </div>
-
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex align-items-center">
+          <!-- Card with image on the left -->
+          <div class="card" style="width: 18rem;">
+            <img src="Echinacea.jpg" class="card-img-top" alt="Image 3">
+          </div>
+          <!-- Text on the right -->
+          <div class="ms-4 text-center">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Next Button -->
+    <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="bg-dark carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
-
 
 <!-- Dashboard Button Section -->
 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -33,6 +76,68 @@
   </div>
 </div>
 
+<!--**************** Carousel End ************************** -->
+
+<!--**************** Info Section Start ************************** -->
+
+<div class="info-container m-4 rounded-4" >
+  <div class="mt-4 container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="Asset1.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="info-heading display-5 lh-1 mb-3">Nature’s Wisdom, Your Wellness</h1>
+        <p class="info-text lead">Discover the power of nature with our thoughtfully curated selection of natural remedies.
+          Backed by expert knowledge and a deep commitment to wellness, we provide personalized support
+          to help you achieve balance, vitality, and lasting health.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--**************** Info Section End ************************** -->
+
+
+<!--**************** Catagory Section Start ************************** -->
+
+<div class="container px-3 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom text-center">Health Product Range</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-4">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg product-card"
+           style="background-image: url('Asset1.png');">
+        <div class="d-flex flex-column h-100 p-4 text-white text-shadow-1">
+
+          <div class="mt-auto text-center">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg product-card"
+           style="background-image: url('Asset3.png');">
+        <div class="d-flex flex-column h-100 p-4 text-white text-shadow-1">
+          <div class="mt-auto text-center">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg product-card"
+           style="background-image: url('Asset5.png');">
+        <div class="d-flex flex-column h-100 p-4 text-white text-shadow-1">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--**************** Catagory Section Start ************************** -->
+
 <!-- Product List Section -->
 <div class="productbg m-4 rounded-5 ">
   <h1 class="producttext text-center border-bottom border-dark-subtle">Our Products</h1>
@@ -40,4 +145,3 @@
     <app-product-list></app-product-list>
   </div>
 </div>
-

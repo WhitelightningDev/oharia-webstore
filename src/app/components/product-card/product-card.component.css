@@ -5,14 +5,14 @@
     border: none;
     text-align: center;
     max-width: 300px;
-    background: #fff;
+    background: #f0e8bf;
   }
 
   .product-img {
     width: 100%;
     height: 200px;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 
   .card-content {

@@ -1,6 +1,6 @@
-<div class="card mb-4 shadow-lg">
+<div class="card mb-4 rounded-3 shadow-lg">
   <!-- Image section -->
-  <img [src]="'http://localhost:5000/' + product.image" alt="{{ product.name }}" class="card-img-top" style="object-fit: contain; height: 220px;">
+  <img [src]="'http://localhost:5000/' + product.image" alt="{{ product.name }}" class="card-img-top">
 
   <!-- Card body section -->
   <div class="card-body">
@@ -12,10 +12,5 @@
       <p class="mb-0"><strong>Price:</strong> ${{ product.price }}</p>
       <p class="mb-0"><strong>Category:</strong> {{ product.category }}</p>
     </div>
-  </div>
-
-  <!-- Card footer if needed (optional) -->
-  <div class="card-footer text-muted">
-    <!-- Optionally, you can add some footer content here -->
   </div>
 </div>

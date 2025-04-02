@@ -1,52 +1,56 @@
-<div class="container mb-5 mt-5 col-lg-12 col-md-12">
-  <div class="card shadow-lg">
-    <div class="card-header bg-info text-dark">
-      <h4 class="mb-0">Add New Product</h4>
-    </div>
-    <div class="card-body">
-      <form (ngSubmit)="addProduct()">
-        <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Short Description</label>
-          <input type="text" class="form-control" [(ngModel)]="product.shortdescription" name="shortdescription" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Description</label>
-          <textarea class="form-control" [(ngModel)]="product.description" name="description" rows="3" required></textarea>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label class="form-label">Price</label>
-              <input type="number" class="form-control" [(ngModel)]="product.price" name="price" required>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label class="form-label">Stock</label>
-              <input type="number" class="form-control" [(ngModel)]="product.stock" name="stock" required>
-            </div>
+<div class="card m-4 shadow-lg">
+  <div class="headertext card-header">
+    <h4 class="mb-0">Add New Product</h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="addProduct()">
+      <div class="mb-3">
+        <label class="headertext form-label">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="product.name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="headertext form-label">Short Description</label>
+        <input type="text" class="form-control" [(ngModel)]="product.shortdescription" name="shortdescription" required>
+      </div>
+      <div class="mb-3">
+        <label class="headertext form-label">Description</label>
+        <textarea class="form-control" [(ngModel)]="product.description" name="description" rows="3"
+          required></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="headertext form-label">Price</label>
+            <input type="number" class="form-control" [(ngModel)]="product.price" name="price" required>
           </div>
         </div>
-        <!-- Category Dropdown -->
-        <div class="mb-3">
-          <label class="form-label">Category</label>
-          <select class="form-select" [(ngModel)]="product.category" name="category" required>
-            <option value="" disabled selected>Select a category</option>
-            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-          </select>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class=" form-label">Stock</label>
+            <input type="number" class="form-control" [(ngModel)]="product.stock" name="stock" required>
+          </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Product Image</label>
-          <input type="file" class="form-control" (change)="onImageChange($event)" required>
-        </div>
-        <div class="text-end">
-          <button type="submit" class="btn btn-success btn-lg">Add Product</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <!-- Category Dropdown -->
+      <div class="mb-3">
+        <label class="headertext form-label">Category</label>
+        <select class="form-select" [(ngModel)]="product.category" name="category" required>
+          <option value="" disabled selected>Select a category</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="headertext form-label">Product Image</label>
+        <input type="file" class="form-control" (change)="onImageChange($event)" required>
+      </div>
+      <div class="text-end">
+        <button type="submit" class="successbutton btn btn-lg">Add Product</button>
+      </div>
+      <!-- Close Button -->
+      <div class="text-center mt-3">
+        <button type="button" class="btn btn-secondary btn-lg" (click)="closeForm()">Close</button>
+      </div>
+    </form>
+
   </div>
 </div>

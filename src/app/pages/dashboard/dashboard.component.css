@@ -1,0 +1,205 @@
+.mainContainer{
+  width: 100%;
+}
+
+.productTable{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.tableHeading{
+  color: #214545;
+}
+
+.columnheading{
+  color: #214545;
+}
+
+.column{
+  background-color: #f0e8bf;
+}
+
+.addButton{
+  background-color: #f0e8bf;
+  color: #214545;
+}
+
+.editButton{
+  color: #f0e8bf;
+  background-color: #214545;
+}
+
+/* Basic table styling */
+.productTable {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.productTable th,
+.productTable td {
+  text-align: left;
+  padding: 12px 15px; /* Add padding for better alignment */
+}
+
+.productTable th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.productTable td {
+  background-color: #ffffff;
+}
+
+/* Hover effect for rows */
+.productTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ensure action buttons are properly aligned */
+.productTable .text-center {
+  text-align: center;
+}
+
+.editButton,
+.btn-danger {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.editButton:hover,
+.btn-danger:hover {
+  opacity: 0.8;
+}
+
+/* Make section headings stand out */
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Styling for the spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Add space between sections */
+.section {
+  margin-bottom: 30px;
+}
+
+/* Card style improvements */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f1f1f1;
+}
+
+.card-header .tableHeading {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+
+
+.addButton:hover {
+  background-color: #e6d57d;
+}
+
+.addButton i {
+  margin-right: 5px;
+}
+
+.noItemsVitality {
+  border: #214545 solid 1px;
+  color: #214545;
+  border-radius: 10px;
+  width: 60%;  /* Adjust the width for your needs */
+  padding: 20px;
+  margin: 20px auto;  /* Centers the div horizontally */
+  text-align: center;  /* Center content inside */
+}
+
+.noItemsVitality h5 {
+  margin-bottom: 10px;
+}
+
+.noItemsVitality p {
+  margin-bottom: 15px;
+}
+
+.noItemsVitality .addButton {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;  /* Adjust the button size */
+  display: block;
+  margin: 0 auto;  /* Center the button horizontally */
+}
+
+.noItemsEssence{
+  border: #214545 solid 1px;
+  color: #214545;
+  border-radius: 10px;
+  width: 60%;  /* Adjust the width for your needs */
+  padding: 20px;
+  margin: 20px auto;  /* Centers the div horizontally */
+  text-align: center;  /* Center content inside */
+}
+
+.noItemsEssence h5 {
+  margin-bottom: 10px;
+}
+
+.noItemsEssence p {
+  margin-bottom: 15px;
+}
+
+.noItemsEssence .addButton {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;  /* Adjust the button size */
+  display: block;
+  margin: 0 auto;  /* Center the button horizontally */
+}
+
+.noItemsCanna{
+  border: #214545 solid 1px;
+  color: #214545;
+  border-radius: 10px;
+  width: 60%;  /* Adjust the width for your needs */
+  padding: 20px;
+  margin: 20px auto;  /* Centers the div horizontally */
+  text-align: center;  /* Center content inside */
+}
+
+.noItemsCanna h5 {
+  margin-bottom: 10px;
+}
+
+.noItemsCanna p {
+  margin-bottom: 15px;
+}
+
+.noItemsCanna .addButton {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;  /* Adjust the button size */
+  display: block;
+  margin: 0 auto;  /* Center the button horizontally */
+}
+
+
+
