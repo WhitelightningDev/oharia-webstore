@@ -34,9 +34,15 @@
 
       <!-- Icons for Cart & Bag -->
       <div class="d-flex align-items-center me-3">
-        <a [routerLink]="['/cart']" class="shoppingitems me-3">
-          <i class="bi bi-cart-fill fs-4"></i>
-        </a>
+        <!-- Cart Icon with Dynamic Badge -->
+<a [routerLink]="['/cart']" class="shoppingitems me-3 position-relative">
+  <i class="bi bi-cart-fill fs-4"></i>
+  <!-- ✅ Show Badge if cartItemCount > 0 -->
+  <span *ngIf="cartItemCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    {{ cartItemCount }}
+  </span>
+</a>
+
         <a [routerLink]="['']" class="shoppingitems">
           <i class="bi bi-bag-fill fs-4"></i>
         </a>

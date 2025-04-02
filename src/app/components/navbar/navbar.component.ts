@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,25 +14,41 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
+  cartItemCount = 0; // Track the number of items in the cart
+  private cartSubscription: Subscription | undefined;
 
-  constructor(private readonly router: Router, private readonly cdr: ChangeDetectorRef) {}
+  constructor(
+    private readonly router: Router,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly cartService: CartService // Inject CartService to access the cart item count
+  ) {}
 
   ngOnInit() {
     this.checkLoginStatus();
+
+    // Subscribe to cart item count updates
+    this.cartSubscription = this.cartService.cartItemCount$.subscribe(count => {
+      this.cartItemCount = count; // Update the cart item count when it changes
+    });
 
     // Listen for both localStorage changes and custom events
     window.addEventListener('storage', this.handleStorageChange);
     window.addEventListener('authStatusChanged', this.handleAuthChange);
   }
-  navigateToLogin() {
-    this.router.navigate(['/login']); // Redirect to login page
-  }
-
 
   ngOnDestroy() {
     // Remove event listeners to avoid memory leaks
     window.removeEventListener('storage', this.handleStorageChange);
     window.removeEventListener('authStatusChanged', this.handleAuthChange);
+
+    // Unsubscribe from the cart item count observable to prevent memory leaks
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']); // Redirect to login page
   }
 
   private readonly handleStorageChange = () => {

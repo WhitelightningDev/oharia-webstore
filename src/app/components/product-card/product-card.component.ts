@@ -11,15 +11,18 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductCardComponent {
   @Input() product: any;
-  showToast: boolean = false; // ✅ State for showing the toast
+  showToast: boolean = false; // State for showing the toast
+  toastMessage: string = ''; // Message to display in the toast
 
-  constructor(private cartService: CartService) {}
+  constructor(private readonly cartService: CartService) {}
 
   addToCart(product: any) {
     this.cartService.addToCart(product);
-    this.showToast = true; // ✅ Show the toast
+    this.toastMessage = `${product.name} has been added to your cart!`; // Set the toast message
+    this.showToast = true; // Show the toast
+
     setTimeout(() => {
-      this.showToast = false; // ✅ Hide toast after 3 seconds
+      this.showToast = false; // Hide toast after 3 seconds
     }, 3000);
   }
 }
