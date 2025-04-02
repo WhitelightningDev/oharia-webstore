@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private readonly apiUrl = 'http://localhost:5000/api/products';
+  private readonly apiUrl = 'https://oharia-backend.onrender.com/api/products';
 
   constructor(private readonly http: HttpClient) {}
 

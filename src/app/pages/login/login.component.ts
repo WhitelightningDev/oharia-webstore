@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   username = '';
   password = '';
-  loginUrl = 'http://localhost:5000/api/auth/login';  // Your API URL
+  loginUrl = 'https://oharia-backend.onrender.com/api/auth/login';  // Your API URL
 
   constructor(private readonly router: Router, private readonly http: HttpClient) {}
 

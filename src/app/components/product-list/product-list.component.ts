@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   constructor(private readonly http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<Product[]>('http://localhost:5000/api/products') // ✅ Explicitly define response as Product[]
+    this.http.get<Product[]>('https://oharia-backend.onrender.com/api/products') // ✅ Explicitly define response as Product[]
       .subscribe((data) => {
         this.vitalityProducts = data.filter(product => product.category === 'Vitality');
         this.essenceProducts = data.filter(product => product.category === 'Essence');
